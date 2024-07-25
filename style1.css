@@ -12,7 +12,7 @@
 
 :root {
     --text-color: #efead6;
-    --bg-color: #1a1a1a;
+    --bg-color: #000;
     --main-color: #ffa343;
 
     --h1-font: 6rem;
@@ -22,7 +22,7 @@
 
 body {
     color: var(--text-color);
-    background: linear-gradient(135deg, var(--bg-color) #ffffff);
+    background: var(--bg-color);
 }
 
 header {
@@ -31,7 +31,7 @@ header {
     right: 0;
     z-index: 1000;
     width: 100%;
-    background: grey;
+    background: transparent;
     padding: 27px 17%;
     display: flex;
     align-items: center;
@@ -43,11 +43,6 @@ header {
     color: var(--text-color);
     font-weight: 700;
     text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.logo:hover {
-    transform: translateY(-3px);
 }
 
 span {
@@ -63,14 +58,12 @@ span {
     font-size: 1rem;
     font-weight: 500;
     margin: 22px;
-    transition: all 0.3s ease;
+    transition: all .50s ease;
     padding-top: 10px;
     text-decoration: none;
 }
-
 .navbar a:hover {
     color: var(--main-color);
-    transform: translateY(-3px);
 }
 
 .h-right {
@@ -78,6 +71,11 @@ span {
     align-items: center;
 }
 
+.h-right a:first-child {
+    color: var(--text-color);
+    font-size: 1rem;
+    margin-right: 20px;
+}
 .h-right a {
     vertical-align: middle;
     font-size: 20px;
@@ -85,8 +83,8 @@ span {
     margin-right: 18px;
     margin-left: 5px;
     text-decoration: none;
-    transition: all 0.3s ease;
 }
+
 
 .h-right a:hover {
     transform: translateY(-3px);
@@ -124,7 +122,7 @@ span {
     background-color: #2980b9;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 500px) {
     :root {
         --h1-font: 3rem;
         --h2-font: 2rem;
@@ -144,7 +142,6 @@ span {
         background: var(--bg-color);
         text-align: center;
         padding: 20px 0;
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
         transition: 0.5s ease;
     }
 
@@ -152,9 +149,16 @@ span {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
 
+    .navbar, .navbar * {
+        background: none;
+        background-color: transparent;
+        color: inherit;
+    }
+
     .navbar a {
         margin: 15px 0;
         font-size: 1.2rem;
+        background: transparent;
     }
 
     .home {
